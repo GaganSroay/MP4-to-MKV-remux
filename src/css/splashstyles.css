@@ -1,0 +1,23 @@
+html{
+    height: 100%;
+    overflow: hidden;
+  }
+body {
+font-family:'Segoe UI', Roboto, Helvetica, Arial;
+margin: 0;
+padding: 0;
+height: 100%;
+overflow: hidden;
+}
+
+.mainbody{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(89, 89, 94);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    

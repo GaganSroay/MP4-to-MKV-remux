@@ -1,0 +1,71 @@
+#emptyButtonsDiv{
+    display: flex;
+  }
+  
+
+  #topButtonsDiv{
+    display: flex;
+    height: 40px;
+  }
+
+  .topButton{
+    width: 60px;
+    padding: 10px 10px 10px 10px;
+    background-color: #434247;
+    color: rgb(226, 228, 239);
+    font-weight: bold;
+    
+    margin-right: 10px;
+  
+    /* border: 2px solid rgb(46, 52, 80); */
+    border-width: 0;
+    border-radius: 5px;
+  
+  }
+
+  
+  .mainButton{
+    font-size: 10px;
+    padding: 10px 15px 10px 15px;
+    background-color: #3e3e3e;
+    color: white;
+    border: 0px solid rgb(93, 93, 93);
+    border-radius: 1px;
+    /* border-color: rgb(146, 146, 146); */
+  
+  }
+
+  .mainButtonRight{
+    margin-left: 5px;
+  }
+  
+  #emptyButtonsDiv{
+    flex: 1;
+  }
+  
+  #clearButton{
+    margin-left: 10px;
+  }
+  
+  
+  
+  #buttonsDiv{
+    display: flex;
+  }
+  
+  
+  #buttonsDiv{
+    display: flex;
+    margin-top: 20px;
+  }
+
+  
+#browserButton{
+    font-size: 10px;
+    margin-left: 10px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid #3e3e3e;
+    padding: 7px 10px;
+  }
+  

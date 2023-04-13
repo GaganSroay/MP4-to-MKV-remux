@@ -1,0 +1,64 @@
+
+table, th, td {
+  
+    border-collapse: collapse;
+    font-size: 12px;
+    padding: 6px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  
+  th{
+    background-color: rgb(37, 37, 37);
+  }
+  
+  td {
+    border: 0.5px solid rgb(78, 78, 78);
+  }
+  table{
+    width: 100%;
+    /* margin-right: 2px; */
+  }
+  
+  #myname{
+    text-align: center;
+    margin: auto 0 auto 20px;
+  }
+  
+  #t1{
+    font-size: 12px;
+  }
+  
+  #t2{
+    margin-top: 7px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: small;
+    color: #696969;
+  }
+  
+  #t3{
+    font-size: 12px;
+    color: #696969;
+    margin-bottom: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

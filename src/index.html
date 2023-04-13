@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MKV to MP4 Remux</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    
+  </head>
+  <body>
+    <div id="maincontainer">
+      <div id="header">
+        <div id="commandBlock">
+          <div id="t2">Command</div>
+          <input type="text" id="argumentsField" name="outputFolder" 
+            value="ffmpeg -i {fin} -map 0:v -map 0:a -c:v copy -c:a copy {fout}">
+        </div>
+        <div id="t3">Use "{fin}" to refer input file and "{fout}" for output</div>
+      </div>
+      <div id="middleContainer">
+        
+        
+        
+        <span id="t1">Add files to list and then press start</span>
+
+        <div id="dragdroplocationContainer">
+          <div id="dragdroplocation"></div>
+          <div id="droplocationtext">Drag Here or click to browse</div>
+        </div>
+        
+        <div id="folderPathDiv">
+          <label for="outputFolder" id="outputFolderLable">Output Folder</label>
+          <input type="text" id="outputFolderTextField" name="outputFolder" value="C:\Users\gagan\Videos">
+          <button id="browserButton">BROWSE</button>
+        </div>
+        <div id="buttonsDiv">
+          <button class="mainButton" id="startButton" >START</button>
+          <div id="emptyButtonsDiv"></div>
+          <button class="mainButton mainButtonRight"  id="clearButton">CLEAR</button>
+          <button class="mainButton mainButtonRight"  id="sortButton">SORT</button>
+          <button class="mainButton mainButtonRight"  id="OutFolder">OUT FOLDER</button>
+        </div>
+      </div>
+      
+      <div id="footer">
+        <div id="bottom_part_1">Press Start Button to start conversion</div>
+        <div id="footerContent">
+          <div class="loader"></div>
+          <div id="footerContentFileName">
+            <div id="bottomFileName">File Name : </div>
+            <div id="process_log">preparing</div>
+          </div>
+          <div id="progressnumber"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <input type="file" webkitdirectory directory multiple/> -->
+    
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/buttonstyles.css"/>
+    <link rel="stylesheet" href="./css/tablestyles.css"/>
+    <script src="dragAndDrop.js"></script>
+    <script src="defaultOutputPath.js"></script>
+  </body>
+</html>
