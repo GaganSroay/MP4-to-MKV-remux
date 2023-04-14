@@ -27,12 +27,8 @@
   "build": {
     "appId": "com.thewizard.mkvremux",
     "productName": "MKV Remux",
-    "directories": {
-      "output": "electron/output",
-      "buildResources": "electron/buildResources"
-    },
     "win": {
-      "target": ["portable"],
+      "target": ["nsis"],
       "icon": "./build/app_icon.png"
     },
     "nsis":{

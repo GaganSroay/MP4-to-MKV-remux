@@ -89,6 +89,7 @@ typings/
 out/
 
 electron/
-ffmpeg.exe
-ffprobe.exe
+trash/
+src/ffmpeg/ffmpeg.exe
+src/ffmpeg/ffprobe.exe
 

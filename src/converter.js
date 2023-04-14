@@ -1,6 +1,7 @@
 
 
 const executeCommand = require('./commands')
+const path = require('path');
 
 const processLog = document.getElementById("process_log");
 const droplocationtext = document.getElementById("droplocationtext");
@@ -18,6 +19,9 @@ const STOPPED = "STOPPED"
 
 let prog = {}
 
+const ffmpegPath = path.join(__dirname, './ffmpeg/ffmpeg.exe')
+const ffprobePath = path.join(__dirname, './ffmpeg/ffmpeg.exe')
+
 
 const converterParameters = (inputPath,outputPath) => [
     "-i", inputPath,
@@ -25,10 +29,6 @@ const converterParameters = (inputPath,outputPath) => [
     "-c:v", "copy",
     outputPath,"-y"
 ]
-
-    
-    
-
 
 const converterParametersFromField = ()=> {
     const argumentsString = document.getElementById("argumentsField").value
@@ -71,7 +71,7 @@ const durationFunction = async (inputPath) => {
         inputPath
     ]
     let duration = "";
-    const code = await executeCommand("ffprobe",params, data => {if(data) duration = duration + data.toString();})
+    const code = await executeCommand(ffprobePath,params, data => {if(data) duration = duration + data.toString();})
     duration = convertTimeFormat(duration);
     return duration;
 }
@@ -79,11 +79,8 @@ const durationFunction = async (inputPath) => {
 const timeKeyword = "time="
 
 const converterFunction = async(parameters,inputPath,outputPath,callback) => {
-    const parametersArray = converterParameters(inputPath,outputPath)
-    
     const arr = fillFilesInArray(parameters.args, inputPath,outputPath)
-    
-    const code = await executeCommand("ffmpeg",arr, data => {
+    const code = await executeCommand(ffmpegPath,arr, data => {
         if(data) {
             const log = data.toString()
             //console.log(log)
@@ -99,8 +96,6 @@ const converterFunction = async(parameters,inputPath,outputPath,callback) => {
     })
     return code
 }
-
-
 
 const convert = async (files,callback) =>{
 

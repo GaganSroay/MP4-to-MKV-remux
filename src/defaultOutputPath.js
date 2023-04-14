@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const { ipcRenderer } = require("electron");
 
-const outputFileName = "output_path.txt";
+const outputFileName = "./src/output_path.txt";
 
 fs.readFile(outputFileName,(err,data)=>{
     if(!err){
