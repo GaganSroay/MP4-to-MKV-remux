@@ -1,10 +1,16 @@
 const fs = require('fs');
 
-const { ipcRenderer } = require("electron");
+const { ipcRenderer,remote } = require("electron");
+const path = require('path');
+const {env} = require('process');
 
-const outputFileName = "./src/output_path.txt";
+const outputFileName = "mp4RemuxDefaultLocation.txt"
 
-fs.readFile(outputFileName,(err,data)=>{
+let pathName = env.APPDATA
+
+const outPath = path.join(pathName, outputFileName)
+
+fs.readFile(outPath,(err,data)=>{
     if(!err){
         const filePath = data.toString();
         document.getElementById("outputFolderTextField").value = filePath
@@ -17,6 +23,6 @@ document.getElementById("browserButton").addEventListener('click', async (event)
     const filePath = files.filePaths[0];
     if(filePath){
         document.getElementById("outputFolderTextField").value = filePath
-        fs.writeFile(outputFileName, filePath,()=>{});
+        fs.writeFile(outPath, filePath,()=>{});
     }
 })

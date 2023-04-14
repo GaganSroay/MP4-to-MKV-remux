@@ -92,4 +92,5 @@ electron/
 trash/
 src/ffmpeg/ffmpeg.exe
 src/ffmpeg/ffprobe.exe
+dist/
 

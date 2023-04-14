@@ -21,12 +21,15 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.65",
     "electron": "20.1.0",
-    "electron-builder": "^23.6.0",
-    "electron-packager": "^17.1.1"
+    "electron-builder": "^23.6.0"
   },
   "build": {
     "appId": "com.thewizard.mkvremux",
     "productName": "MKV Remux",
+    "asarUnpack": [
+      "src/ffmpeg/ffmpeg.exe",
+      "src/ffmpeg/ffprobe.exe"
+    ],
     "win": {
       "target": ["nsis"],
       "icon": "./build/app_icon.png"
@@ -34,10 +37,11 @@
     "nsis":{
       "allowToChangeInstallationDirectory":true,
       "oneClick": false,
-      "createStartMenuShortcut": true
+      "createStartMenuShortcut": true,
+      "perMachine":false
     },
     "portable": {
-      "artifactName": "MKV Remux.exe"
+      "artifactName": "MKV Remux portable v1.0.0.exe"
     }
   }
 }

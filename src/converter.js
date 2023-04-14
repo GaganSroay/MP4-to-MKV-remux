@@ -19,9 +19,13 @@ const STOPPED = "STOPPED"
 
 let prog = {}
 
-const ffmpegPath = path.join(__dirname, './ffmpeg/ffmpeg.exe')
-const ffprobePath = path.join(__dirname, './ffmpeg/ffmpeg.exe')
+let pathName = __dirname.toString()
+if(pathName.indexOf('app.asar') >= 0){
+    pathName = pathName.replace("app.asar", "app.asar.unpacked");
+}
 
+const ffmpegPath = path.join(pathName, '/ffmpeg/ffmpeg.exe')
+const ffprobePath = path.join(pathName, '/ffmpeg/ffprobe.exe')
 
 const converterParameters = (inputPath,outputPath) => [
     "-i", inputPath,
@@ -190,9 +194,7 @@ const convert = async (files,callback) =>{
 
 const getPercentage = (progress,duration,processing) => {
     let p = progress*100.0;
-    //console.log(p+"      "+progress+"     "+duration+"     "+p/duration+"      "+parseInt(p/duration))
     let pf = parseFloat(p)/parseFloat(duration);
-
     if(processing){
         if(pf<0 || progress > duration) return 0;
         return parseInt(pf);
